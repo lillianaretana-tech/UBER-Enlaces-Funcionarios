@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBER - Todos los Enlaces</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 10px;
+        }
+        
+        .contador {
+            background: #fde8d0;
+            padding: 15px;
+            border-radius: 5px;
+            color: #e67e22;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        thead {
+            background: #e67e22;
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .descripcion {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .proyecto {
+            background: #fde8d0;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: #e67e22;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .enlace-btn {
+            display: inline-block;
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            word-break: break-all;
+            padding: 8px;
+            border-radius: 3px;
+        }
+        
+        .enlace-btn:hover {
+            color: #d35400;
+            text-decoration: underline;
+            background: #f0f0f0;
+        }
+        
+        .btn-copiar {
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            font-size: 0.9em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn-copiar:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-copiar:active {
+            transform: translateY(0);
+        }
+        
+        .mensaje {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideIn 0.3s ease;
+            text-align: center;
+        }
+        
+        .mensaje.exito {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .filtro-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #e67e22;
+        }
+        
+        .filtro-section input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        .filtro-section input:focus {
+            outline: none;
+            border-color: #e67e22;
+            box-shadow: 0 0 5px rgba(230, 126, 34, 0.3);
+        }
+        
+        .acciones {
+            display: flex;
+            gap: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            .acciones {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 UBER - Todos los Enlaces</h1>
+            <p>Acceso a todos los formularios disponibles para UBER</p>
+        </div>
+        
+        <div class="content">
+            <div id="mensaje" class="mensaje"></div>
+            
+            <h2 class="section-title">🔍 Búsqueda</h2>
+            <div class="filtro-section">
+                <input 
+                    type="text" 
+                    id="buscar" 
+                    placeholder="Busca por descripción, proyecto o enlace..." 
+                    onkeyup="filtrarTabla()"
+                >
+            </div>
+            
+            <h2 class="section-title">📌 Todos los Enlaces</h2>
+            <div class="contador">
+                Total de enlaces: <span id="total">0</span>
+            </div>
+            <div class="table-responsive" id="tabla-contenedor">
+                <!-- La tabla se generará aquí con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Datos UBER
+        const enlaces = [
+            { descripcion: "Consumo Eléctrico", enlace: "https://forms.gle/CsouAQuHeutuVDF17", proyecto: "Todos UBER" },
+            { descripcion: "Inspección Pre USO - Equipos", enlace: "https://forms.gle/yajPMHJoT31SwEueA", proyecto: "Todos UBER" },
+            { descripcion: "Reporte capacitaciones", enlace: "https://lillianaretana-tech.github.io/Reporte-de-capacitaciones/", proyecto: "Todos UBER" },
+            { descripcion: "Reporte Good Catch - sin 4Insite", enlace: "https://forms.office.com/pages/responsepage.aspx?id=kRvUG74MskSPl6i7JRdwWdgPaftQuqVNhVaw7-k4Sc1UMkFVMjZLOTY4MzJVVFhXUUIzUjdBRjVZNy4u&route=shorturl", proyecto: "Todos UBER" },
+        ];
+
+        // Mostrar mensaje
+        function mostrarMensaje(texto, tipo = 'exito') {
+            const mensaje = document.getElementById('mensaje');
+            mensaje.textContent = texto;
+            mensaje.className = `mensaje ${tipo}`;
+            setTimeout(() => {
+                mensaje.className = 'mensaje';
+            }, 2000);
+        }
+
+        // Renderizar tabla
+        function renderizarTabla(datosAMostrar = enlaces) {
+            const contenedor = document.getElementById('tabla-contenedor');
+            document.getElementById('total').textContent = datosAMostrar.length;
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Proyecto</th>
+                            <th>Enlace</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            datosAMostrar.forEach((item) => {
+                html += `
+                    <tr>
+                        <td class="descripcion">${item.descripcion}</td>
+                        <td><span class="proyecto">${item.proyecto}</span></td>
+                        <td>
+                            <a href="${item.enlace}" target="_blank" class="enlace-btn">
+                                Abrir formulario →
+                            </a>
+                        </td>
+                        <td>
+                            <div class="acciones">
+                                <button class="btn-copiar" onclick="copiarEnlace('${item.enlace.replace(/'/g, "\\'")}')">📋 Copiar</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            html += `
+                    </tbody>
+                </table>
+            `;
+
+            contenedor.innerHTML = html;
+        }
+
+        // Filtrar tabla
+        function filtrarTabla() {
+            const busqueda = document.getElementById('buscar').value.toLowerCase();
+            
+            const filtrados = enlaces.filter(item => 
+                item.descripcion.toLowerCase().includes(busqueda) ||
+                item.proyecto.toLowerCase().includes(busqueda) ||
+                item.enlace.toLowerCase().includes(busqueda)
+            );
+
+            renderizarTabla(filtrados);
+        }
+
+        // Copiar enlace al portapapeles
+        function copiarEnlace(enlace) {
+            navigator.clipboard.writeText(enlace).then(() => {
+                mostrarMensaje('✅ Enlace copiado al portapapeles');
+            }).catch(() => {
+                mostrarMensaje('❌ Error al copiar el enlace');
+            });
+        }
+
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            renderizarTabla();
+        });
+    </script>
+</body>
+</html>
